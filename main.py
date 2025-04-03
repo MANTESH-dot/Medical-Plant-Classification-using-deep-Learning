@@ -15,13 +15,7 @@ class Main:
         main_frame = Frame(self.root, bd=10, relief=RIDGE)
         main_frame.place(x=0, y=0, width=1530, height=840)
 
-        # Background Image
-        img = Image.open("img.webp")
-        img = img.resize((756, 825), Image.Resampling.LANCZOS)
-        self.photoimg = ImageTk.PhotoImage(img)
-
-        f_label = Label(main_frame, image=self.photoimg)
-        f_label.place(x=0, y=0, width=756, height=825)
+ 
 
         # Predict button
         b1_1 = Button(main_frame, text="Classify", cursor="hand2",
@@ -116,84 +110,7 @@ class Main:
                             'nutritional_benefits': 'Contains vitamin C, iron, calcium, and anthocyanins.',
                             'side_effects': 'May lower blood pressure excessively in some individuals; avoid during pregnancy.',
                             'additional_uses': 'Used in herbal teas and as a natural dye due to its red pigment.'
-                        },
-            'Neem': {
-                            'properties': 'Antibacterial, antifungal, antiviral, and anti-inflammatory.',
-                            'uses': 'Used for skin health, treating infections, and improving oral health.',
-                            'nutritional_benefits': 'Contains nimbin, nimbidin, and other bioactive compounds.',
-                            'side_effects': 'Excessive consumption may cause nausea and liver issues.',
-                            'additional_uses': 'Used in cosmetics, skincare, and as a natural pesticide.'
-                        },
-            'Bitter Gourd': {
-                            'properties': 'High in vitamin C and antioxidants, helps regulate blood sugar.',
-                            'uses': 'Used to treat diabetes, digestive issues, and skin conditions.',
-                            'nutritional_benefits': 'Rich in vitamins A and C, folate, and fiber.',
-                            'side_effects': 'Can cause stomach upset in some individuals; excessive use may lead to hypoglycemia.',
-                            'additional_uses': 'Often used in cooking for its bitter flavor and as a vegetable.'
-                        },
-            'Lemon': {
-                            'properties': 'Rich in vitamin C, antioxidants, and antibacterial properties.',
-                            'uses': 'Used for immunity boosting, digestive health, and detoxification.',
-                            'nutritional_benefits': 'High in vitamin C, potassium, and pectin fiber.',
-                            'side_effects': 'High acidity can erode tooth enamel; may cause heartburn in some people.',
-                            'additional_uses': 'Used as a natural preservative, in cleaning, and in aromatherapy.'
-                        },
-            'Roselle': {
-                            'properties': 'Rich in antioxidants and bioactive compounds.',
-                            'uses': 'Used for promoting heart health and reducing inflammation.',
-                            'nutritional_benefits': 'Contains flavourings, tannins, and poly phenols.',
-                            'side_effects': 'May cause mild digestive issues if consumed excessively.',
-                            'additional_uses': 'Used in herbal remedies and traditional medicine for relaxation.'
-                        },
-            'Curry Leaves': {
-                            'properties': 'Antioxidant, antibacterial, and anti-inflammatory properties.',
-                            'uses': 'Used for improving digestion, managing diabetes, and promoting hair growth.',
-                            'nutritional_benefits': 'Rich in vitamins A, B, C, and E, and iron.',
-                            'side_effects': 'Excessive consumption may cause stomach upset.',
-                            'additional_uses': 'Widely used in cooking and Ayurvedic treatments for hair care.'
-                        },
-            'Guava': {
-                            'properties': 'Rich in vitamin C, antioxidants, and dietary fiber.',
-                            'uses': 'Used for boosting immunity, improving digestion, and skin health.',
-                            'nutritional_benefits': 'Contains vitamin C, potassium, and lycopene.',
-                            'side_effects': 'Excessive consumption may cause digestive discomfort.',
-                            'additional_uses': 'Eaten as a fruit or used in juices, jams, and desserts.'
-                        },
-            'Tea': {
-                            'properties': 'Contains antioxidants, caffeine, and anti-inflammatory compounds.',
-                            'uses': 'Commonly used for alertness, reducing inflammation, and as an immune booster.',
-                            'nutritional_benefits': 'Provides small amounts of potassium, fluoride, and manganese.',
-                            'side_effects': 'High caffeine intake can lead to anxiety, insomnia, and digestive issues.',
-                            'additional_uses': 'Used in skincare and as a flavoring ingredient in culinary dishes.'
-                        },
-            'MariGold': {
-                            'properties': 'Contains lutein and flavourings with anti-inflammatory properties.',
-                            'uses': 'Used for skin health, wound healing, and reducing inflammation.',
-                            'nutritional_benefits': 'Rich in antioxidants and carotenoids.',
-                            'side_effects': 'May cause allergic reactions in some individuals.',
-                            'additional_uses': 'Used in skincare, teas, and as an ornamental plant.'
-                        },
-            'Turmeric': {
-                            'properties': 'Contains curcumin, known for its anti-inflammatory and antioxidant effects.',
-                            'uses': 'Used for arthritis, joint pain, digestive issues, and as an anti-inflammatory.',
-                            'nutritional_benefits': 'Contains iron, manganese, and curcuminoids which support health.',
-                            'side_effects': 'High doses may cause digestive upset; avoid during pregnancy in medicinal amounts.',
-                            'additional_uses': 'Used in cooking, particularly in curries, and as a natural dye.'
-                        },
-            'Aloe Vera': {
-                            'properties': 'Rich in vitamins and minerals, soothing and healing for skin.',
-                            'uses': 'Used for burns, skin irritation, digestive health, and immune support.',
-                            'nutritional_benefits': 'Contains vitamins A, C, E, and several B vitamins.',
-                            'side_effects': 'Oral consumption may cause diarrhea; not recommended for pregnant women.',
-                            'additional_uses': 'Used in cosmetics, skincare, and as a natural moisturizer.'
-                        },
-            'Taro': {
-                            'properties': 'Rich in fiber, vitamins, and minerals, aids in digestion.',
-                            'uses': 'Used for digestive issues, improving gut health, and as a source of energy.',
-                            'nutritional_benefits': 'High in fiber, potassium, magnesium, and vitamin C.',
-                            'side_effects': 'Must be cooked thoroughly to remove toxins; raw taro can cause throat irritation.',
-                            'additional_uses': 'Widely used in cooking, especially in stews and as a starchy vegetable.'
-                        },
+                        }
             'Linden': {
                             'properties': 'Calming properties, often used in herbal teas.',
                             'uses': 'Used for relaxation, relieving anxiety, and promoting sleep.',
@@ -263,13 +180,7 @@ class Main:
 
     def predict_image(self):
         try:
-            # labels = ["Holy Basil","Chilly","Water Hyssop","Papaya",
-            #           "Peppermint","Five-leaved Chaste Tree","Vida",
-            #           "Hibiscus","Neem","Bitter Gourd","Lemon","Roselle"
-            #           ,"Curry Leaves","Guava","Tea","Marigold","Adhul Sa"
-            #           ,"White Fig","Taro","Tiki","Apata","Turmeric",
-            #           "Aloe Vera","Cluster Fig","Coriander","Linden"
-            #           ,"Java Plum"]
+
             labels = ['Neem', 'Lemon', 'Java Plum', 'Guava', 'Aloe Vera', 'Tiki', 'Apata', 'Taro', 'MariGold',
                        'Turmeric', 'Papaya', 'Linden', 'Chilly', 'Bitter Gourd', 'Vida', 'Coriander', 'Curry Leaves',
                        'Holy Basil', 'White Fig', 'Adhul Sa', 'Water Hyssop', 'Cluster Fig', 'Peppermint', 'Tea', 'Roselle',
