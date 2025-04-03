@@ -25,7 +25,7 @@ This project aims to classify different medical plants using a Deep Learning mod
 - Optimizer: Adam
 - Loss Function: Categorical Crossentropy
 - Batch Size: 28
-- Number of Epochs: 14
+- Number of Epochs: Upto desired output
 
 
 ## Authors  
